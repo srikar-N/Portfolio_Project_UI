@@ -23,7 +23,7 @@ public class LoginTest extends BaseTest {
 	@DataProvider // Getting Data from a .json file
 	public Object[][] invalidData() throws IOException {
 		List<HashMap<String, String>> data = getJsonData(
-		System.getProperty("user.dir") + "/src/main/resources/portfolio/resources/invaidData.json");
+		System.getProperty("user.dir") + "/src/main/resources/portfolio/resources/invaildData.json");
 		return new Object[][] { { data.get(0) }, { data.get(1) } };
 	}
 
