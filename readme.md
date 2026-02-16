@@ -3,14 +3,18 @@
 
 ## 📌 Overview
 
-This project is a scalable UI automation framework built using Selenium WebDriver with Java following the Page Object Model (POM) design pattern.
+This project is a UI automation framework built using Selenium WebDriver with Java, designed to mimic a real regression testing workflow.
 
-It automates an end-to-end e-commerce order workflow — from login to order confirmation — replicating real user behaviour.
+Rather than automating isolated test cases, the framework focuses on automating stable user journeys while keeping exploratory and edge-case validation manual.
 
-The goal of this framework is to:
- - Reduce repetitive regression effort 🔁
- - Improve release confidence ✅
- - Allow manual testing to focus on exploratory scenarios 🧠
+A representative e-commerce purchase flow (Login → Product → Checkout → Confirmation) is automated to demonstrate framework design, maintainability, and CI-friendly execution.
+
+Key goals:
+- Minimize repetitive regression effort
+- Provide consistent validation across executions
+- Enable faster feedback through parallel execution
+
+
 
 
 ## 🛠 Tech Stack
@@ -27,17 +31,17 @@ The goal of this framework is to:
 
 
 
-## ✨ Framework Highlights
+## ✨ Framework Design Highlights
 
-- 🧱 Centralized WebDriver management (BaseTest)
-- 🧭 Clean Page Object Model structure
-- 📂 Data-driven testing using JSON
-- ⚙️ Environment configuration via properties file
-- 🔄 Retry mechanism for flaky tests
-- 🧑‍⚖️ TestNG Listeners for execution tracking
-- 🧵 Thread-safe parallel execution using ThreadLocal
-- 🚀 Parallel execution support
-- 🤖 Jenkins integrated execution pipeline
+- Implemented Page Object Model to separate UI actions from test logic
+- Centralized driver lifecycle management using BaseTest
+- Implemented thread-safe parallel execution using ThreadLocal WebDriver
+- Added Retry mechanism to handle flaky UI behaviour
+- Integrated TestNG Listeners for execution tracking and debugging
+- Externalized configuration using properties file
+- Data-driven validation using JSON test data
+- Integrated Jenkins execution for automated regression runs
+ne
 
 ## 🧪 Automated Test Coverage
 1. 🔐 Authentication
@@ -56,33 +60,36 @@ The goal of this framework is to:
 ```
 ui-automation-framework
 │
-├── 📂 pages
-│     ├── BasePage
-|     ├── LoginPage       
-│     ├── ProductPage
-│     └── ConfirmCheckoutPage
+├── src/main/java
+│   ├── portfolio.pages
+│   │     ├── BasePage
+│   │     ├── LoginPage
+│   │     ├── ProductPage
+│   │     └── ConfirmCheckoutPage
+│   │
+│   └── portfolio.utility
+│         └── ReportsUtil
 │
-├── 📂 tests
-│     ├── LoginTest
-│     └── PlaceOrderTest
+├── src/test/java
+│   ├── portfolio.tests
+│   │     ├── LoginTest
+│   │     └── PlaceOrderTest
+│   │
+│   └── portfolio.testComponents
+│         ├── BaseTest
+│         ├── Listener
+│         └── Retry
 │
-├── 📂 base
-│     └── BaseTest (driver setup & initialization)
+├── src/main/resources
+│   └── Global.properties
 │
-├── 📂 utilities
-│     ├── ReportsUtil
-│     ├── Listener
-│     └── Retry
+├── src/test/resources
+│   └── invalidData.json
 │
-├── 📂 test-data
-│     └── invalidData.json
-│
-├── ⚙️ config
-│     └── Global.properties
-│
-├── 🧪 testng.xml
-└── 📦 pom.xml
+├── testng.xml
+└── pom.xml
 ```
+
 
 
 ## ▶️ Running the Tests
@@ -102,5 +109,8 @@ Test suites can be triggered automatically and executed in parallel for faster f
 
 ## 🎯 Purpose
 
-During manual testing, stable workflows like login and purchase had to be repeatedly verified every release.
-This framework automates those regression scenarios so manual testing effort can focus on edge cases and new feature validation.
+To simulate real-world regression cycles, a representative e-commerce workflow was automated (login → product selection → checkout → confirmation).
+
+The goal was not the specific application, but designing a maintainable automation strategy where stable flows are automated and manual testing can focus on exploratory and edge-case validation.
+
+
