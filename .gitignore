@@ -1,0 +1,22 @@
+# Maven build output (crucial)
+/target/
+
+# TestNG default output
+/test-output/
+
+# Eclipse specific files (since you're using Eclipse)
+.metadata
+.settings/
+.classpath
+.project
+bin/
+
+# Temporary and log files
+*.log
+*.tmp
+
+# Ignore the contents of the reports folder
+/reports/*
+
+# But DO NOT ignore the .gitkeep file
+!/reports/.gitkeep
