@@ -1,7 +1,7 @@
-##🧪 E-Commerce UI Automation Framework 🚀
-Selenium WebDriver + Java + TestNG
+# 🧪 E-Commerce UI Automation Framework 🚀
+**Selenium WebDriver + Java + TestNG**
 
-##📌 Overview
+## 📌 Overview
 
 This project is a scalable UI automation framework built using Selenium WebDriver with Java following the Page Object Model (POM) design pattern.
 
@@ -27,7 +27,7 @@ The goal of this framework is to:
 
 
 
-##✨ Framework Highlights
+## ✨ Framework Highlights
 
 - 🧱 Centralized WebDriver management (BaseTest)
 - 🧭 Clean Page Object Model structure
@@ -39,7 +39,7 @@ The goal of this framework is to:
 - 🚀 Parallel execution support
 - 🤖 Jenkins integrated execution pipeline
 
-##🧪 Automated Test Coverage
+## 🧪 Automated Test Coverage
 1. 🔐 Authentication
     - Valid login
     -  Invalid login validation
@@ -85,7 +85,7 @@ ui-automation-framework
 ```
 
 
-##▶️ Running the Tests
+## ▶️ Running the Tests
 
 Run using Maven:
 
@@ -95,12 +95,12 @@ mvn test
 
 Or execute via TestNG suite XML.
 
-##🤖 CI/CD Integration
+## 🤖 CI/CD Integration
 
 The framework is integrated with Jenkins to support automated execution.
 Test suites can be triggered automatically and executed in parallel for faster feedback.
 
-##🎯 Purpose
+## 🎯 Purpose
 
 During manual testing, stable workflows like login and purchase had to be repeatedly verified every release.
 This framework automates those regression scenarios so manual testing effort can focus on edge cases and new feature validation.
