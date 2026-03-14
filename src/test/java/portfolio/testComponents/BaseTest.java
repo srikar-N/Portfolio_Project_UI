@@ -87,11 +87,12 @@ public String getScreenshot(String testName,WebDriver driver) throws IOException
 	
 	
 	@BeforeMethod(alwaysRun = true)
-	public void setup() throws IOException {
+	public LoginPage setup() throws IOException {
 		driver = get_browser();
 		String url = property.getProperty("url");
 		loginpage = new LoginPage(driver);
 		loginpage.goTo(url);
+		return loginpage;
 		
 		
 	}

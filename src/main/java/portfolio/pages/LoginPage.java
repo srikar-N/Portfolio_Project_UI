@@ -22,6 +22,7 @@ public class LoginPage extends BasePage{
 	@FindBy(id = "terms")
 	WebElement termsCheckbox;
 	@FindBy(id = "signInBtn")
+	public
 	WebElement signInButton;
 	@FindBy(css="input[value='user']")
 	WebElement radioButton;
@@ -41,6 +42,11 @@ public class LoginPage extends BasePage{
 		send_data(password,Pass);
 		click_on_element(signInButton);
 		return new ProductPage(driver);
+	}
+	
+	public void login(String name,String Pass) {
+		send_data(username,name);
+		send_data(password,Pass);
 	}
 
 	

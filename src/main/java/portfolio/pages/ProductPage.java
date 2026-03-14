@@ -19,10 +19,18 @@ public class ProductPage extends BasePage {
 	List<WebElement> products;
 	@FindBy(css = "a.btn-primary")
 	WebElement checkoutButton;
+	@FindBy(xpath="//a[text()='Home']")
+	WebElement home_Btn;
 
 	
 
-	
+	public FormPage gotoFormPage(String url) {
+		wait_for_element_to_appear(By.xpath("//a[text()='Home']"));
+		click_on_element(home_Btn);
+		wait_for_url_change(url);
+		
+		return new FormPage(driver);
+	}
 
 
 

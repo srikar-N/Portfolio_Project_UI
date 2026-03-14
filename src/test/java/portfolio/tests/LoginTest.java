@@ -4,7 +4,6 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.List;
 
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
@@ -12,7 +11,6 @@ import org.testng.annotations.Test;
 import portfolio.testComponents.BaseTest;
 
 public class LoginTest extends BaseTest {
-	public WebDriverWait wait;
 	String url = "https://rahulshettyacademy.com/angularpractice/shop";
 
 	@DataProvider // simple data provider method
