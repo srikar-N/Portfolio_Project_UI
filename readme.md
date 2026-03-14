@@ -38,6 +38,8 @@ Key goals:
 - Externalized environment configuration via properties file
 - Data-driven validation using JSON test data
 - Integrated Jenkins for automated regression execution
+- BDD Layer:
+- Added A lightweight Cucumber wrapper was added to allow certain test scenarios to be expressed in Gherkin format for better readability.
 
 
 
